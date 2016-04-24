@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="vo.BookRecords" table="book">
+   
+   	<id name="ISBN" type="string" column="ISBN">
+   	</id>
+	<property name="Title"  column="Title" type="string">
+ 	</property>
+  	<property name="Author" column="Author" type="string">
+  	</property>
+ 	<property name="Publisher"  column="Publisher" type="string">
+  	</property>
+  	<property name="Genre" column="Genre" type="string">
+  	</property>
+ 	<property name="Pages"  column="Pages" type="int">
+  	</property>
+  	<property name="Type" column="Type" type="string">
+  	</property>
+  	<property name="Price" column="Price" type="int">
+   	</property>
+   	<property name="Date" column="Date" type="date">
+   	</property>
+ 	<property name="Synopsis"  column="Synopsis" type="string">
+  	</property>
+</class>
+</hibernate-mapping>
+

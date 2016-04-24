@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="vo.UserRecords" table="user">
+   	<id name="email" type="string" column="Email">
+   	</id>
+	<property name="name" column="Name" type="string">
+   	</property>
+ 	<property name="number"  column="Number" type="string">
+  	</property>
+  	<property name="password" column="Password" type="string">
+  	</property>
+ </class>
+</hibernate-mapping>
+

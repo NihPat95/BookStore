@@ -1,0 +1,17 @@
+.order{
+    border:1px solid black;
+}
+.fig{
+    float: right;
+    padding-right: 5px;
+}
+.close{
+    
+}
+.items{
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+}
+.rgt{
+   padding: 40px 0px;     
+}

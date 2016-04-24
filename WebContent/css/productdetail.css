@@ -1,0 +1,14 @@
+.productmain{
+    margin:40px;
+}
+.col-sm-8{
+    padding: 0px;
+}
+.imgback{
+    background-image: url(../img/productback.png);
+    background-size: cover;
+
+}
+.side{
+    padding-top: 40px;
+}

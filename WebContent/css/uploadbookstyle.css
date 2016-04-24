@@ -1,0 +1,13 @@
+.registrationmain{
+    margin:40px;
+}
+.registrationmain input{
+    margin:10px 0px;
+    padding: 10px;
+    width:90%;  
+}
+.registrationmain select{
+    margin:10px 0px;
+    padding: 10px;
+    width:90%;
+}

@@ -1,0 +1,30 @@
+.itemp{
+    padding: 10px;
+}
+
+.listcheckboxes{
+    border: 1px solid black;
+    text-align: initial;
+    padding: 0 40px;
+
+}
+.main{
+    margin: 40px;
+}
+.filterheader{
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+.item{
+    padding: 10px;
+    background-color: whitesmoke;
+    margin: 5px;
+}
+.col-sm-3{
+    padding: 15px;
+}
+div.productimg img{
+    width: 80%;
+}

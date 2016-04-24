@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/server"/>
+	<classpathentry kind="lib" path="D:/mysql-connector-java-5.0.8/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Mail"/>
+	<classpathentry kind="lib" path="D:/javamail1_4_7/javamail-1.4.7/lib/dsn.jar"/>
+	<classpathentry kind="lib" path="D:/javamail1_4_7/javamail-1.4.7/lib/gimap.jar"/>
+	<classpathentry kind="lib" path="D:/javamail1_4_7/javamail-1.4.7/lib/imap.jar"/>
+	<classpathentry kind="lib" path="D:/javamail1_4_7/javamail-1.4.7/lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="D:/javamail1_4_7/javamail-1.4.7/lib/pop3.jar"/>
+	<classpathentry kind="lib" path="D:/javamail1_4_7/javamail-1.4.7/lib/smtp.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

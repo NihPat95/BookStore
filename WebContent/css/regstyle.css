@@ -1,0 +1,8 @@
+.registrationmain{
+    margin: 40px;
+}
+div.registrationmain input{
+    margin:10px 0px;
+    padding: 10px;
+    width:90%;  
+}
