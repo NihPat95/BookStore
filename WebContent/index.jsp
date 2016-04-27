@@ -52,8 +52,7 @@
                         <li><a href="GetGenre?genrebox=Thriller">Thriller</a></li>
                      </ul>
                   </li>
-                  <li><a href="#">Upload Book</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="https://github.com/nihpat95">Contact</a></li>
                   <li class="search">
                      <form action="<%=request.getContextPath()%>/Search" method="post">
                         <input type="text" name="search" id="search" placeholder="Search">
@@ -66,8 +65,8 @@
                   	<li><a href="Register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                   	<li><a href="Register.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   	<% }else{ %>
-                  	<li><a href="DisplayCart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                  	<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=user.getName()%></a></li>
+                  	<li><a href="DisplayCart"><span class="glyphicon glyphicon-shopping-cart">(<%=session.getAttribute("cartno") %>)</span></a></li>
+                  	<li><a href="#"><span class="glyphicon glyphicon-user"></span><%=user.getName()%></a></li>
                   	<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                   	<% } %>
                </ul>
@@ -169,13 +168,12 @@
             <li>
                <div class="social-ic">
                   <ul>
-                     <li><a href="#"><i class="facebok"> </i></a></li>
-                     <li><a href="#"><i class="twiter"> </i></a></li>
-                     <li><a href="#"><i class="goog"> </i></a></li>
-                     <li><a href="#"><i class="be"> </i></a></li>
-                     <li><a href="#"><i class="pp"> </i></a></li>
-                     <div class="clearfix"></div>
-                  </ul>
+                     <li><a href="construct.html"><i class="facebok"> </i></a></li>
+                     <li><a href="construct.html"><i class="twiter"> </i></a></li>
+                     <li><a href="construct.html"><i class="goog"> </i></a></li>
+                     <li><a href="construct.html"><i class="be"> </i></a></li>
+                     <li><a href="construct.html"><i class="pp"> </i></a></li>
+                   </ul>
                </div>
             </li>
          </div>
@@ -186,19 +184,19 @@
    <footer>
       <div class="row">
          <div class="col-sm-3">
-            <h3>CUSTOMER CARE</h3>
+            <h3><a href="construct.html">CUSTOMER CARE</a></h3>
             <ul>
-               <li>Help Center</li>
-               <li>FAQ</li>
-               <li>How To Buy</li>
-               <li>Delivery</li>
+               <li><a href="construct.html">Help Center</a></li>
+               <li><a href="construct.html">FAQ</a></li>
+               <li><a href="construct.html">How To Buy</a></li>
+               <li><a href="construct.html">Delivery</a></li>
             </ul>
          </div>
          <div class="col-sm-3">
-            <h3>ABOUT US</h3>
+            <h3><a href="construct.html">ABOUT US</a></h3>
             <ul>
-               <li>Team</li>
-               <li>Contact</li>
+               <li><a href="construct.html">Team</a></li>
+               <li><a href="construct.html">Contact</a></li>
             </ul>
          </div>
       </div>

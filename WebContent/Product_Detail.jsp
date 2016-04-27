@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="vo.UserRecords" %>
+<%@ page import="vo.ReviewRecords" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +30,7 @@
       
    </head>
    <body>
-       <header>
+     <header>
       <nav class="navbar navbar-inverse">
          <div class="container-fluid">
             <div class="navbar-header">
@@ -51,16 +52,15 @@
                   <li class="dropdown">
                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Books<span class="caret"></span></a>
                      <ul class="dropdown-menu">
-                        <li><a href="#">Comedy</a></li>
-                        <li><a href="#">Fantasy</a></li>
-                        <li><a href="#">Fiction</a></li>
-                        <li><a href="#">Horror</a></li>
-                        <li><a href="#">Romantic</a></li>
-                        <li><a href="#">Thriller</a></li>
+                        <li><a href="GetGenre?genrebox=Comedy">Comedy</a></li>
+                        <li><a href="GetGenre?genrebox=Fantasy">Fantasy</a></li>
+                        <li><a href="GetGenre?genrebox=Fiction">Fiction</a></li>
+                        <li><a href="GetGenre?genrebox=Horror">Horror</a></li>
+                        <li><a href="GetGenre?genrebox=Romance">Romance</a></li>
+                        <li><a href="GetGenre?genrebox=Thriller">Thriller</a></li>
                      </ul>
                   </li>
-                  <li><a href="#">Upload Book</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="https://github.com/nihpat95">Contact</a></li>
                   <li class="search">
                      <form action="<%=request.getContextPath()%>/Search" method="post">
                         <input type="text" name="search" id="search" placeholder="Search">
@@ -73,8 +73,8 @@
                   	<li><a href="Register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                   	<li><a href="Register.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   	<% }else{ %>
-                  	<li><a href="DisplayCart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                  	<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=user.getName()%></a></li>
+                  <li><a href="DisplayCart"><span class="glyphicon glyphicon-shopping-cart">(<%=session.getAttribute("cartno") %>)</span></a></li>
+                  		<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=user.getName()%></a></li>
                   	<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                   	<% } %>
                </ul>
@@ -83,11 +83,11 @@
          </div>
       </nav>
    </header>
-  <!--Product Details-->
+     <!--Product Details-->
       <div class="productmain">
         <div class="row imgback">
             <div class="col-sm-6 text-center">
-                <img src="img/small/${sessionScope.bookdetail.getISBN()}.png" style="width:80%; padding:30px;">
+                <img src="img/small/${sessionScope.bookdetail.getISBN()}.png" style="width:60%; padding:30px;">
            </div>
             <div class="col-sm-6 side" style="padding-bottom:20px;">
                 <h1>${sessionScope.bookdetail.getTitle()}</h1>
@@ -119,61 +119,131 @@
        
        <!--Product Ends -->
 
-       <!--Top Products-->
-       
-       <!--Footer Top-->
-       
-<div class="foot-top">
-	<div class="container follow">
-		<div class="row text-center">
-			<li>
-				<div class="fooll">
-					<h2>Follow Us On</h2>
-				</div>
-			</li>
-			<li>
-				<div class="social-ic">
-					<ul>
-                        <li><a href="#"><i class="facebok"> </i></a></li>
-						<li><a href="#"><i class="twiter"> </i></a></li>
-						<li><a href="#"><i class="goog"> </i></a></li>
-						<li><a href="#"><i class="be"> </i></a></li>
-						<li><a href="#"><i class="pp"> </i></a></li>
-							<div class="clearfix"></div>	
-					</ul>
-				</div>
-			</li>
-				
-		
+       <!-- Recommendation -->
+      <div class="main">
+      <div class="row">
+         <div class="im col-xs-4 text-center">
+            <hr/>
+         </div>
+         <div class="ti col-xs-4 text-center">
+            <h3>You May Also Like</h3>
+         </div>
+         <div class="im col-xs-4 text-center">
+            <hr/>
+         </div>
+      </div>
+      <div class="productlist row text-center">
+        <c:forEach items="${sessionScope.rmdbooks}" var="x">
+         <div class="itemp col-sm-3">
+            <div class="productimg row">
+            <a href="<%=request.getContextPath()%>/ProductDetail?Id=${x.getISBN()}">
+               <img src="img/small/${x.getISBN()}.png">
+            </a>
+            </div>
+            <div class="row">
+               <h4>
+               <a href="<%=request.getContextPath()%>/ProductDetail?Id=${x.getISBN()}">${x.getTitle()}</a>
+            	</h4>
+               <h6>${x.getPrice()}</h6>
+               <span class="btn btn-default">
+              <a href="AddToCart?id=${x.getISBN()}&flag=index">Add To Cart</a>
+               </span>
+            </div>
+         </div>
+         </c:forEach>
+       </div>
+   </div>
+   <%session.setAttribute("rmdbooks",null);%>
+      <!-- End Recommendation -->
+      <!--Review Section-->
+      <div class="main">
+         <div class="row">
+            <div class="im col-xs-4 text-center">
+               <hr/>
+            </div>
+            <div class="ti col-xs-4 text-center">
+               <h3>Reviews</h3>
+            </div>
+            <div class="im col-xs-4 text-center">
+               <hr/>
+            </div>
+         </div>
+          <div class="row">
+          <div class="col-sm-6" style="padding-bottom:10px;"> 
+          <form method="post" action="SubmitReview">
+              <h2>Enter Your Reviews Below:</h2>
+             <textarea class="form-control" name="comment" rows="3" id="comment" placeholder="..."></textarea>
+              <input type="submit" value="Submit">
+              </form>
+          </div>
+          
+         
+          
+          <div class="col-sm-6" style="margin-top:20px;">
+          	<h4>Other User Reviews:</h4>
+       		 <c:forEach items="${sessionScope.reviews}" var="x">
+              <div class="row well">
+              <span class="title" style="border-bottom:1px solid black; font-size:x-large;">${x.getEmail()}</span>
+              <p>${x.getReview()}</p>
+              </div>
+       		</c:forEach>   
+          </div>
 			
-	</div>
-</div>
-</div>
-<!--Footer Top End-->
+          <%session.setAttribute("reviews",null);%>
+          </div>
+    </div>
+       <!--Review Section Ends-->
        
-       <!--Footer-->
-            <footer>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h3>CUSTOMER CARE</h3>               
-                        <ul>
-                        <li>Help Center</li>
-                            <li>FAQ</li>
-                            <li>How To Buy</li>
-                            <li>Delivery</li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3">
-                        <h3>ABOUT US</h3>               
-                        <ul>
-                        <li>Team</li>
-                        <li>Contact</li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
-       <!--Footer End-->
        
+       
+       
+       
+        <!--Footer Top-->
+   <div class="foot-top">
+      <div class="container follow">
+         <div class="row text-center">
+            <li>
+               <div class="fooll">
+                  <h2>Follow Us On</h2>
+               </div>
+            </li>
+            <li>
+               <div class="social-ic">
+                  <ul>
+                     <li><a href="construct.html"><i class="facebok"> </i></a></li>
+                     <li><a href="construct.html"><i class="twiter"> </i></a></li>
+                     <li><a href="construct.html"><i class="goog"> </i></a></li>
+                     <li><a href="construct.html"><i class="be"> </i></a></li>
+                     <li><a href="construct.html"><i class="pp"> </i></a></li>
+                   </ul>
+               </div>
+            </li>
+         </div>
+      </div>
+   </div>
+   <!--Footer Top End-->
+   <!--Footer-->
+   <footer>
+      <div class="row">
+         <div class="col-sm-3">
+            <h3><a href="construct.html">CUSTOMER CARE</a></h3>
+            <ul>
+               <li><a href="construct.html">Help Center</a></li>
+               <li><a href="construct.html">FAQ</a></li>
+               <li><a href="construct.html">How To Buy</a></li>
+               <li><a href="construct.html">Delivery</a></li>
+            </ul>
+         </div>
+         <div class="col-sm-3">
+            <h3><a href="construct.html">ABOUT US</a></h3>
+            <ul>
+               <li><a href="construct.html">Team</a></li>
+               <li><a href="construct.html">Contact</a></li>
+            </ul>
+         </div>
+      </div>
+   </footer>
+   <!--Footer End-->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->

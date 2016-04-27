@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="vo.ReviewRecords" table="review">
+   <composite-id>
+   	<key-property name="Email" column="Email"/>
+  	<key-property name="ISBN" column="ISBN"/>
+   </composite-id>
+  	<property name="Review" column="review" type="java.lang.String"/>
+  	</class>
+</hibernate-mapping>
+

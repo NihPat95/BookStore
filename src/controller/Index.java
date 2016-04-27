@@ -42,6 +42,8 @@ public class Index extends HttpServlet {
 			//genre based book collection
 			session.setAttribute("genbooks", null);
 			//set user login session 
+			session.setAttribute("reviews", null);
+			session.setAttribute("cartno", null);
 			session.setAttribute("user", null);
 			//set user login session 
 			session.setAttribute("forgotpassword", null);

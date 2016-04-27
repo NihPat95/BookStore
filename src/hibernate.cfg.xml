@@ -15,5 +15,6 @@
   <mapping resource="vo/UserRecords.hbm.xml"/>
   <mapping resource="vo/BookRecords.hbm.xml"/>
   <mapping resource="vo/CartRecord.hbm.xml"/>
+  <mapping resource="vo/ReviewRecords.hbm.xml"/>
 </session-factory>
 </hibernate-configuration>

@@ -50,8 +50,7 @@
                         <li><a href="#">Thriller</a></li>
                      </ul>
                   </li>
-                  <li><a href="#">Upload Book</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="https://github.com/nihpat95">Contact</a></li>
                   <li class="search">
                      <form action="<%=request.getContextPath()%>/Search" method="post">
                         <input type="text" name="search" id="search" placeholder="Search">

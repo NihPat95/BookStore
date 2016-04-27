@@ -8,23 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.BookDAO;
-import dao.CartDAO;
+import dao.ReviewDAO;
 import vo.BookRecords;
-import vo.CartRecord;
+import vo.ReviewRecords;
 import vo.UserRecords;
-
 /**
- * Servlet implementation class DisplayCart
+ * Servlet implementation class SubmitReview
  */
-@WebServlet("/DisplayCart")
-public class DisplayCart extends HttpServlet {
+@WebServlet("/SubmitReview")
+public class SubmitReview extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DisplayCart() {
+    public SubmitReview() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,23 +33,6 @@ public class DisplayCart extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		try{
-			
-			//retrieve cart records based on user email 
-			HttpSession session = request.getSession();
-			UserRecords user =(UserRecords) session.getAttribute("user");
-			CartDAO cartdao = new CartDAO();
-			CartRecord carts[] = cartdao.getCarts(user);
-			System.out.println(carts.length);
-			session.setAttribute("cartlist",carts);
-			response.sendRedirect("Cart.jsp");
-		}
-		catch(Exception e){
-			e.printStackTrace();
-			
-		}
-	
 	}
 
 	/**
@@ -60,6 +41,32 @@ public class DisplayCart extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		HttpSession session = request.getSession();
+		UserRecords usere = (UserRecords)session.getAttribute("user");
+		if(usere == null)
+		{
+			response.sendRedirect("Register.jsp");
+		}
+		else{
+			String user = usere.getEmail();
+			String comment = request.getParameter("comment");
+			String ISBN = ((BookRecords) session.getAttribute("bookdetail")).getISBN();
+			
+			ReviewRecords review = new ReviewRecords();
+			review.setEmail(user);
+			review.setISBN(ISBN);
+			review.setReview(comment);
+			ReviewDAO reviewdao = new ReviewDAO(review); 
+			reviewdao.addreview();
+			System.out.println("Review Added Successfully");
+			response.sendRedirect("ProductDetail?Id="+ISBN+"");
+		}
+		
+		
+		
+		
+		
+		
 	}
 
 }

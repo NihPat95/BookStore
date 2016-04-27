@@ -57,6 +57,9 @@ public class AddToCart extends HttpServlet {
 			cart.setBooks(book);
 			CartDAO cartdao = new CartDAO(cart);
 			cartdao.add();
+			int n = (int)session.getAttribute("cartno");
+			n++;
+			session.setAttribute("cartno", n);
 			System.out.println("after add cart");
 			if(page.equals("index"))
 			response.sendRedirect("index.jsp");

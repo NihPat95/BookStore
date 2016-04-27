@@ -73,6 +73,34 @@ public class CartDAO {
 		
 		return null;
 	}
+	public int getcartno(String email){
+		Configuration configure = null;
+		SessionFactory sessionfactory = null;
+		Session session = null;
+		Transaction t = null;
+		try{
+			configure = new Configuration().configure();
+			sessionfactory = configure.buildSessionFactory();
+			session = sessionfactory.openSession();
+			t = session.beginTransaction();
+			String hql = "FROM CartRecord Where User='"+email+"'";
+			Query query = session.createQuery(hql);
+			List<CartRecord> results = query.list();
+			
+			return results.size();
+			//System.out.println("Size of cart"+results.size());
+			
+		}
+		catch(Exception e){
+			System.out.println("Inside CartDAO->getCarts");
+			e.printStackTrace();
+		}
+		
+		return 0;
+		
+		
+	}
+	
 	public void delete(int key) {
 		// TODO Auto-generated method stub
 		

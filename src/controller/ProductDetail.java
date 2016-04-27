@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.BookDAO;
+import dao.ReviewDAO;
 import vo.BookRecords;
+import vo.ReviewRecords;
 
 /**
  * Servlet implementation class ProductDetail
@@ -38,8 +40,17 @@ public class ProductDetail extends HttpServlet {
 		try{
 			BookDAO bookdao = new BookDAO();
 			BookRecords book = bookdao.getsingleBook(isbn);
+			BookRecords rmdbooks[] = bookdao.getrmdbooks(book.getISBN(),book.getGenre());
+			
+			ReviewRecords review = new ReviewRecords();
+			review.setEmail("");
+			review.setISBN(isbn);
+			review.setReview("");
+			ReviewRecords reviews[] = new ReviewDAO(review).getReviews();
 			HttpSession session = request.getSession();
+			session.setAttribute("reviews", reviews);
 			session.setAttribute("bookdetail", book);
+			session.setAttribute("rmdbooks",rmdbooks);
 			response.sendRedirect("Product_Detail.jsp");
 			
 		}catch(Exception e){

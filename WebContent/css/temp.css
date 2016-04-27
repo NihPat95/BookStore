@@ -1,3 +1,6 @@
+.a{
+	color:black;
+}
 .navbar{
     background: #f5f5f5;
     font:#323232;
@@ -25,12 +28,11 @@ header{
     text-align: -webkit-center;
 }
 .left{
-    background-color: #004400;
+   
     width: 5%;  
 }
 
 .right{
-    background-color: #004400;
     width: 5%;  
 }
 

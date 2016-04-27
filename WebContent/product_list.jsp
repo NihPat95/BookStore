@@ -22,7 +22,7 @@
       <![endif]-->
    </head>
    <body>
-         <header>
+     <header>
       <nav class="navbar navbar-inverse">
          <div class="container-fluid">
             <div class="navbar-header">
@@ -44,16 +44,15 @@
                   <li class="dropdown">
                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Books<span class="caret"></span></a>
                      <ul class="dropdown-menu">
-                        <li><a href="#">Comedy</a></li>
-                        <li><a href="#">Fantasy</a></li>
-                        <li><a href="#">Fiction</a></li>
-                        <li><a href="#">Horror</a></li>
-                        <li><a href="#">Romantic</a></li>
-                        <li><a href="#">Thriller</a></li>
+                        <li><a href="GetGenre?genrebox=Comedy">Comedy</a></li>
+                        <li><a href="GetGenre?genrebox=Fantasy">Fantasy</a></li>
+                        <li><a href="GetGenre?genrebox=Fiction">Fiction</a></li>
+                        <li><a href="GetGenre?genrebox=Horror">Horror</a></li>
+                        <li><a href="GetGenre?genrebox=Romance">Romance</a></li>
+                        <li><a href="GetGenre?genrebox=Thriller">Thriller</a></li>
                      </ul>
                   </li>
-                  <li><a href="#">Upload Book</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="https://github.com/nihpat95">Contact</a></li>
                   <li class="search">
                      <form action="<%=request.getContextPath()%>/Search" method="post">
                         <input type="text" name="search" id="search" placeholder="Search">
@@ -66,8 +65,8 @@
                   	<li><a href="Register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                   	<li><a href="Register.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   	<% }else{ %>
-                  	<li><a href="DisplayCart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                  	<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=user.getName()%></a></li>
+                  <li><a href="DisplayCart"><span class="glyphicon glyphicon-shopping-cart">(<%=session.getAttribute("cartno") %>)</span></a></li>
+                  		<li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=user.getName()%></a></li>
                   	<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                   	<% } %>
                </ul>
@@ -76,7 +75,7 @@
          </div>
       </nav>
    </header>
-      <!--List Items-->
+    <!--List Items-->
       <div class="main">
       <div class="row text-center">
          <div class="col-sm-2">
@@ -84,7 +83,7 @@
                <h3>Genre</h3>
             </div>
             <div class="listcheckboxes">
-            <form action="GetGenre" method="post" style="padding-bottom:10px;">
+            <form action="GetGenre" method="get" style="padding-bottom:10px;">
                <label class="checkbox"><input type="checkbox" name="genrebox" value="Comedy">Comedy</label>
                <label class="checkbox"><input type="checkbox" name="genrebox" value="Fantasy">Fantasy</label>
                <label class="checkbox"><input type="checkbox" name="genrebox" value="Fiction">Fiction</label>
@@ -106,11 +105,10 @@
                   </a>
                   </div>
                   <div class="row">
-                     <div class="row">
-                     <h4><a href="<%=request.getContextPath()%>/ProductDetail?Id=${x.getISBN()}">
+                     <h5 style="margin:0px; padding-top:10px;"><a href="<%=request.getContextPath()%>/ProductDetail?Id=${x.getISBN()}">
                      ${x.getTitle()}
-                     </a></h4></div>
-                     <h6>${x.getPrice()}</h6>
+                     </a></h5>
+                     <p style="margin:0px; padding-top:10px; padding-bottom:10px;">${x.getPrice()}</p>
                      <span class="btn btn-default">
                      <a href="AddToCart?id=${x.getISBN()}&flag=list">Add To Cart</a>
                      </span>
@@ -122,55 +120,55 @@
             </div>
          </div>
       </div>
+     </div>
       <!--List Items end-->
-      <!--Top Products-->
-      <!--Footer Top-->
-      <div class="foot-top">
-         <div class="container follow">
-            <div class="row text-center">
-               <li>
-                  <div class="fooll">
-                     <h2>Follow Us On</h2>
-                  </div>
-               </li>
-               <li>
-                  <div class="social-ic">
-                     <ul>
-                        <li><a href="#"><i class="facebok"> </i></a></li>
-                        <li><a href="#"><i class="twiter"> </i></a></li>
-                        <li><a href="#"><i class="goog"> </i></a></li>
-                        <li><a href="#"><i class="be"> </i></a></li>
-                        <li><a href="#"><i class="pp"> </i></a></li>
-                        <div class="clearfix"></div>
-                     </ul>
-                  </div>
-               </li>
-            </div>
+      
+       <!--Footer Top-->
+   <div class="foot-top">
+      <div class="container follow">
+         <div class="row text-center">
+            <li>
+               <div class="fooll">
+                  <h2>Follow Us On</h2>
+               </div>
+            </li>
+            <li>
+               <div class="social-ic">
+                  <ul>
+                     <li><a href="construct.html"><i class="facebok"> </i></a></li>
+                     <li><a href="construct.html"><i class="twiter"> </i></a></li>
+                     <li><a href="construct.html"><i class="goog"> </i></a></li>
+                     <li><a href="construct.html"><i class="be"> </i></a></li>
+                     <li><a href="construct.html"><i class="pp"> </i></a></li>
+                   </ul>
+               </div>
+            </li>
          </div>
       </div>
-      <!--Footer Top End-->
-      <!--Footer-->
-      <footer>
-         <div class="row">
-            <div class="col-sm-3">
-               <h3>CUSTOMER CARE</h3>
-               <ul>
-                  <li>Help Center</li>
-                  <li>FAQ</li>
-                  <li>How To Buy</li>
-                  <li>Delivery</li>
-               </ul>
-            </div>
-            <div class="col-sm-3">
-               <h3>ABOUT US</h3>
-               <ul>
-                  <li>Team</li>
-                  <li>Contact</li>
-               </ul>
-            </div>
+   </div>
+   <!--Footer Top End-->
+   <!--Footer-->
+   <footer>
+      <div class="row">
+         <div class="col-sm-3">
+            <h3><a href="construct.html">CUSTOMER CARE</a></h3>
+            <ul>
+               <li><a href="construct.html">Help Center</a></li>
+               <li><a href="construct.html">FAQ</a></li>
+               <li><a href="construct.html">How To Buy</a></li>
+               <li><a href="construct.html">Delivery</a></li>
+            </ul>
          </div>
-      </footer>
-      <!--Footer End-->
+         <div class="col-sm-3">
+            <h3><a href="construct.html">ABOUT US</a></h3>
+            <ul>
+               <li><a href="construct.html">Team</a></li>
+               <li><a href="construct.html">Contact</a></li>
+            </ul>
+         </div>
+      </div>
+   </footer>
+   <!--Footer End-->
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->

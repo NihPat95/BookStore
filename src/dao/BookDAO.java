@@ -206,5 +206,37 @@ public class BookDAO {
 				
 				return null;
 
+	}
+
+	public BookRecords[] getrmdbooks(String isbn, String genre) {
+		// TODO Auto-generated method stub
+		BookRecords bookrecords[];
+		try{
+			
+			Configuration config = new Configuration().configure();
+			SessionFactory sessionfactory = config.buildSessionFactory();
+			Session session = sessionfactory.openSession();
+			String hql = "FROM BookRecords where Genre = '"+genre+"'And ISBN!='"+isbn+"'";
+			System.out.println(hql);
+			Query query = session.createQuery(hql);
+			List<BookRecords> results = query.list();
+			bookrecords = new BookRecords[results.size()];
+			System.out.println(results.size());
+			for(int i=0; i<results.size(); i++)
+			{
+				bookrecords[i] = results.get(i);
+			}	
+			return bookrecords;
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+		
+		
+		
 	}	
 }

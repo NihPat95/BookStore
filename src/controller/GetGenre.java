@@ -33,8 +33,7 @@ public class GetGenre extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		try{
-			String genres = request.getParameter("genrebox");
-			
+			String[] genres = request.getParameterValues("genrebox");
 			BookDAO bookdao = new BookDAO();
 			BookRecords books[] = bookdao.getgenrebooks(genres);
 			HttpSession Session  = request.getSession();
@@ -46,12 +45,8 @@ public class GetGenre extends HttpServlet {
 			finally{
 			
 				response.sendRedirect("product_list.jsp");
-				
 			}
-			
-	
-	
-	}
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -59,31 +54,6 @@ public class GetGenre extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		try{
-		String[] genres = request.getParameterValues("genrebox");
-		
-		for( String s : genres){
-			System.out.println(s);
-		}
-		
-		
-		BookDAO bookdao = new BookDAO();
-		BookRecords books[] = bookdao.getgenrebooks(genres);
-		HttpSession Session  = request.getSession();
-		Session.setAttribute("books", books);
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		finally{
-		
-			response.sendRedirect("product_list.jsp");
-			
-		}
-		
-		
-		
-		
 		
 	}
 

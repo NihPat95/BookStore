@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.CartDAO;
 import dao.UserDAO;
 
 /**
@@ -59,6 +60,7 @@ public class Login extends HttpServlet {
 			break;
 			case 2:
 					//Login successfully
+				   sess.setAttribute("cartno",new CartDAO().getcartno(email));
 				   sess.setAttribute("login", "Login Successfully");
 				   sess.setAttribute("user",user.getUser(email));
 				   response.sendRedirect("index.jsp");
