@@ -17,7 +17,7 @@
       <script src="js/jquery.min.js"></script>
   	  <script src="js/bootstrap.min.js"></script>
       <script src="js/parallax.js"></script>
- 
+ 	  <script src="js/drop.js"></script>
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -65,7 +65,7 @@
                         <li><a href="GetGenre?genrebox=Thriller">Thriller</a></li>
                      </ul>
                   </li>
-                  <li><a href="https://github.com/nihpat95">Contact</a></li>
+                  <li><a href="construct.html">Contact</a></li>
                   <li class="search">
                      <form action="<%=request.getContextPath()%>/Search" method="post">
                         <input type="text" name="search" id="search" placeholder="Search">
@@ -79,7 +79,7 @@
                   	<li><a href="Register.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   	<% }else{ %>
                   	<li><a href="DisplayCart"><span class="glyphicon glyphicon-shopping-cart">(<%=session.getAttribute("cartno") %>)</span></a></li>
-                  	<li><a href="#"><span class="glyphicon glyphicon-user"></span><%=user.getName()%></a></li>
+                  	<li><a href="construct.html"><span class="glyphicon glyphicon-user"></span><%=user.getName()%></a></li>
                   	<li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                   	<% } %>
                </ul>
@@ -105,38 +105,40 @@
       <div class="item active">
         <img src="img/1.jpg" alt="Alt" >
         <div class="carousel-caption">
-        <h1 style="background-color:rgba(245,245,245,0.4);">Vintage Collections</h1>
+        <h3 style="background-color:rgba(245,245,245,0.4);">Vintage Collections</h3>
         </div>
       </div>
 
       <div class="item">
         <img src="img/2.jpg" alt="Alt" >
       <div class="carousel-caption">
-        <h1 style="background-color:rgba(245,245,245,0.4);">Wide Variety</h1>
+        <h3 style="background-color:rgba(245,245,245,0.4);">Wide Variety</h3>
         </div>
       </div>
     
       <div class="item">
         <img src="img/3.jpg" alt="Alt" >
       <div class="carousel-caption">
-        <h1 style="background-color:rgba(245,245,245,0.4);">Get Your Favorite Book Now</h1>
+        <h3 style="background-color:rgba(245,245,245,0.4);">Get Your Favorite Book Now</h3>
         </div>
       </div>
 
       <div class="item">
         <img src="img/4.jpg" alt="Alt" >
       <div class="carousel-caption">
-        <h1 style="background-color:rgba(245,245,245,0.4);">Re-sale Your Old Book</h1>
+        <h3 style="background-color:rgba(245,245,245,0.4);">Re-sale Your Old Book</h3>
         </div>
       </div>
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="    background-color: rgba(0,0,0,0);
+    background-image: none;">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="    background-color: rgba(0,0,0,0);
+    background-image: none;">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -187,56 +189,48 @@
       </div>
    </div>
    <!--Latest Products Ends-->
-   <!--Footer Top-->
-   <div class="foot-top">
-      <div class="container follow">
-         <div class="row text-center">
-            <li>
-               <div class="fooll">
-                  <h2>Follow Us On</h2>
-               </div>
-            </li>
-            <li>
-               <div class="social-ic">
-                  <ul>
-                     <li><a href="construct.html"><i class="facebok"> </i></a></li>
-                     <li><a href="construct.html"><i class="twiter"> </i></a></li>
-                     <li><a href="construct.html"><i class="goog"> </i></a></li>
-                     <li><a href="construct.html"><i class="be"> </i></a></li>
-                     <li><a href="construct.html"><i class="pp"> </i></a></li>
-                   </ul>
-               </div>
-            </li>
-         </div>
-      </div>
-   </div>
-   <!--Footer Top End-->
    <!--Footer-->
-   <footer>
-      <div class="row">
-         <div class="col-sm-3">
-            <h3><a href="construct.html">CUSTOMER CARE</a></h3>
-            <ul>
-               <li><a href="construct.html">Help Center</a></li>
-               <li><a href="construct.html">FAQ</a></li>
-               <li><a href="construct.html">How To Buy</a></li>
-               <li><a href="construct.html">Delivery</a></li>
-            </ul>
-         </div>
-         <div class="col-sm-3">
-            <h3><a href="construct.html">ABOUT US</a></h3>
-            <ul>
-               <li><a href="construct.html">Team</a></li>
-               <li><a href="construct.html">Contact</a></li>
-            </ul>
-         </div>
-      </div>
-   </footer>
+            <footer>
+             
+                
+                
+                   <div class="row text-center">
+                        <!--Footer Top-->
+       <div class="foot-top">
+	<div class="container follow">
+		<div class="row text-center">
+			<li>
+				<div class="fooll">
+					<h2>Follow Us On</h2>
+				</div>
+			</li>
+			<li>
+				<div class="social-ic">
+					<ul>
+                        <li><a href="construct.html"><i class="facebok"> </i></a></li>
+						<li><a href="construct.html"><i class="twiter"> </i></a></li>
+						<li><a href="construct.html"><i class="goog"> </i></a></li>
+						<li><a href="construct.html"><i class="be"> </i></a></li>
+						<li><a href="construct.html"><i class="pp"> </i></a></li>
+							<div class="clearfix"></div>	
+					</ul>
+				</div>
+			</li>
+				
+		
+			
+	</div>
+</div>
+
+                    </div>
+                       
+                        
+					
+				</div>
+                
+            </footer>
+      
    <!--Footer End-->
-   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/parallax.js"></script>
-</body>
+  
+  </body>
 </html>

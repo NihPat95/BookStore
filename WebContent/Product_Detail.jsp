@@ -3,6 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="vo.UserRecords" %>
 <%@ page import="vo.ReviewRecords" %>
+<%@ page import="vo.BookRecords" %>
+<%@ page import="dao.ReviewDAO" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,6 +32,15 @@
       
    </head>
    <body>
+   <% ReviewRecords review = new ReviewRecords();
+			review.setEmail("");
+			String isbn = ((BookRecords)session.getAttribute("bookdetail")).getISBN();
+			review.setISBN(isbn);
+			review.setReview("");
+			ReviewRecords reviews[] = new ReviewDAO(review).getReviews();
+			session.setAttribute("reviews", reviews);%>
+   
+   
      <header>
       <nav class="navbar navbar-inverse">
          <div class="container-fluid">
@@ -153,7 +164,7 @@
          </c:forEach>
        </div>
    </div>
-   <%session.setAttribute("rmdbooks",null);%>
+ 
       <!-- End Recommendation -->
       <!--Review Section-->
       <div class="main">
@@ -176,9 +187,7 @@
               <input type="submit" value="Submit">
               </form>
           </div>
-          
-         
-          
+    
           <div class="col-sm-6" style="margin-top:20px;">
           	<h4>Other User Reviews:</h4>
        		 <c:forEach items="${sessionScope.reviews}" var="x">
@@ -188,9 +197,7 @@
               </div>
        		</c:forEach>   
           </div>
-			
-          <%session.setAttribute("reviews",null);%>
-          </div>
+		  </div>
     </div>
        <!--Review Section Ends-->
        
@@ -198,52 +205,43 @@
        
        
        
-        <!--Footer Top-->
-   <div class="foot-top">
-      <div class="container follow">
-         <div class="row text-center">
-            <li>
-               <div class="fooll">
-                  <h2>Follow Us On</h2>
-               </div>
-            </li>
-            <li>
-               <div class="social-ic">
-                  <ul>
-                     <li><a href="construct.html"><i class="facebok"> </i></a></li>
-                     <li><a href="construct.html"><i class="twiter"> </i></a></li>
-                     <li><a href="construct.html"><i class="goog"> </i></a></li>
-                     <li><a href="construct.html"><i class="be"> </i></a></li>
-                     <li><a href="construct.html"><i class="pp"> </i></a></li>
-                   </ul>
-               </div>
-            </li>
-         </div>
-      </div>
-   </div>
-   <!--Footer Top End-->
-   <!--Footer-->
-   <footer>
-      <div class="row">
-         <div class="col-sm-3">
-            <h3><a href="construct.html">CUSTOMER CARE</a></h3>
-            <ul>
-               <li><a href="construct.html">Help Center</a></li>
-               <li><a href="construct.html">FAQ</a></li>
-               <li><a href="construct.html">How To Buy</a></li>
-               <li><a href="construct.html">Delivery</a></li>
-            </ul>
-         </div>
-         <div class="col-sm-3">
-            <h3><a href="construct.html">ABOUT US</a></h3>
-            <ul>
-               <li><a href="construct.html">Team</a></li>
-               <li><a href="construct.html">Contact</a></li>
-            </ul>
-         </div>
-      </div>
-   </footer>
-   <!--Footer End-->
+ <!--Footer-->
+            <footer>
+             <div class="row text-center">
+                        <!--Footer Top-->
+       <div class="foot-top">
+	<div class="container follow">
+		<div class="row text-center">
+			<li>
+				<div class="fooll">
+					<h2>Follow Us On</h2>
+				</div>
+			</li>
+			<li>
+				<div class="social-ic">
+					<ul>
+                        <li><a href="construct.html"><i class="facebok"> </i></a></li>
+						<li><a href="construct.html"><i class="twiter"> </i></a></li>
+						<li><a href="construct.html"><i class="goog"> </i></a></li>
+						<li><a href="construct.html"><i class="be"> </i></a></li>
+						<li><a href="construct.html"><i class="pp"> </i></a></li>
+							<div class="clearfix"></div>	
+					</ul>
+				</div>
+			</li>
+				
+		
+			
+	</div>
+</div>
+
+                    </div>
+                       
+                        
+					
+				</div>
+                
+            </footer>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->

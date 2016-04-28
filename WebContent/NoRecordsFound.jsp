@@ -79,50 +79,46 @@
      <h1>No Records Founds</h1>
      </div>
        <!--Footer Top-->
-   <div class="foot-top">
-      <div class="container follow">
-         <div class="row text-center">
-            <li>
-               <div class="fooll">
-                  <h2>Follow Us On</h2>
-               </div>
-            </li>
-            <li>
-               <div class="social-ic">
-                  <ul>
-                     <li><a href="construct.html"><i class="facebok"> </i></a></li>
-                     <li><a href="construct.html"><i class="twiter"> </i></a></li>
-                     <li><a href="construct.html"><i class="goog"> </i></a></li>
-                     <li><a href="construct.html"><i class="be"> </i></a></li>
-                     <li><a href="construct.html"><i class="pp"> </i></a></li>
-                   </ul>
-               </div>
-            </li>
-         </div>
-      </div>
-   </div>
-   <!--Footer Top End-->
-   <!--Footer-->
-   <footer>
-      <div class="row">
-         <div class="col-sm-3">
-            <h3><a href="construct.html">CUSTOMER CARE</a></h3>
-            <ul>
-               <li><a href="construct.html">Help Center</a></li>
-               <li><a href="construct.html">FAQ</a></li>
-               <li><a href="construct.html">How To Buy</a></li>
-               <li><a href="construct.html">Delivery</a></li>
-            </ul>
-         </div>
-         <div class="col-sm-3">
-            <h3><a href="construct.html">ABOUT US</a></h3>
-            <ul>
-               <li><a href="construct.html">Team</a></li>
-               <li><a href="construct.html">Contact</a></li>
-            </ul>
-         </div>
-      </div>
-   </footer>
+ <!--Footer-->
+            <footer>
+             
+                
+                
+                   <div class="row text-center">
+                        <!--Footer Top-->
+       <div class="foot-top">
+	<div class="container follow">
+		<div class="row text-center">
+			<li>
+				<div class="fooll">
+					<h2>Follow Us On</h2>
+				</div>
+			</li>
+			<li>
+				<div class="social-ic">
+					<ul>
+                        <li><a href="construct.html"><i class="facebok"> </i></a></li>
+						<li><a href="construct.html"><i class="twiter"> </i></a></li>
+						<li><a href="construct.html"><i class="goog"> </i></a></li>
+						<li><a href="construct.html"><i class="be"> </i></a></li>
+						<li><a href="construct.html"><i class="pp"> </i></a></li>
+							<div class="clearfix"></div>	
+					</ul>
+				</div>
+			</li>
+				
+		
+			
+	</div>
+</div>
+
+                    </div>
+                       
+                        
+					
+				</div>
+                
+            </footer>
    <!--Footer End-->
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
