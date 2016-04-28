@@ -11,8 +11,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>MindPalace</title>
       <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,300,700' rel='stylesheet' type='text/css'>
-      <link href="css/productdetail.css" rel="stylesheet">
+      <script src="js/jquery.min.js"></script>
+  	  <link href="css/productdetail.css" rel="stylesheet">
       <link href="css/temp.css" rel="stylesheet">
       <link rel="stylesheet" href="css/font-awesome.min.css">
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

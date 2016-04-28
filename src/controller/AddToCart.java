@@ -15,7 +15,7 @@ import vo.CartRecord;
 import vo.UserRecords;
 
 /**
- * Servlet implementation class AddToCart
+/ * Servlet implementation class AddToCart
  */
 @WebServlet("/AddToCart")
 public class AddToCart extends HttpServlet {

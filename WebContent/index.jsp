@@ -4,22 +4,35 @@
 <%@ page import="vo.UserRecords" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>MindPalace</title>
-   <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Lato:400,300,700' rel='stylesheet' type='text/css'>
-   <link href="css/style.css" rel="stylesheet">
-   <link href="css/temp.css" rel="stylesheet">
-   <link rel="stylesheet" href="css/font-awesome.min.css">
-   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-   <!--[if lt IE 9]>
-   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-   <![endif]-->
-</head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>MindPalace</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/temp.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+      <script src="js/jquery.min.js"></script>
+  	  <script src="js/bootstrap.min.js"></script>
+      <script src="js/parallax.js"></script>
+ 
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+       <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width:90%;
+      margin: auto;
+  }
+  </style>
+   </head>
+   
 <body>
 
    <header>
@@ -75,44 +88,62 @@
          </div>
       </nav>
    </header>
-   <!--Sliding-->
-   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-         <li data-target="#myCarousel" data-slide-to="1"></li>
-         <li data-target="#myCarousel" data-slide-to="2"></li>
-         <li data-target="#myCarousel" data-slide-to="3"></li>
-      </ol>
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-         <div class="item active">
-      <img src="img/1.png" alt="GOT">
-    </div>
+   <!--Sliding-->  
+<div class="container" style="padding:0px; margin-top:-65px; width:100%;">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
 
-    <div class="item">
-      <img src="img/2.png" alt="GOT">
-    </div>
-
-    <div class="item">
-      <img src="img/3.png" alt="GOT">
-    </div>
-
-    <div class="item">
-      <img src="img/4.png" alt="GOT">
-    </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/1.jpg" alt="Alt" >
+        <div class="carousel-caption">
+        <h1 style="background-color:rgba(245,245,245,0.4);">Vintage Collections</h1>
+        </div>
       </div>
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+      <div class="item">
+        <img src="img/2.jpg" alt="Alt" >
+      <div class="carousel-caption">
+        <h1 style="background-color:rgba(245,245,245,0.4);">Wide Variety</h1>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="img/3.jpg" alt="Alt" >
+      <div class="carousel-caption">
+        <h1 style="background-color:rgba(245,245,245,0.4);">Get Your Favorite Book Now</h1>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="img/4.jpg" alt="Alt" >
+      <div class="carousel-caption">
+        <h1 style="background-color:rgba(245,245,245,0.4);">Re-sale Your Old Book</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-      </a>
-   </div>
-   <!--Sliding Ends-->
+    </a>
+  </div>
+</div>
+    
+        <!--Sliding Ends-->
    <!--Latest Products-->
    <div class="main">
       <div class="row">

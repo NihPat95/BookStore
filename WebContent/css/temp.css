@@ -22,20 +22,6 @@ header{
    margin: 40px;
     
 }
-
-.carousel{
-    margin: 40px;
-    text-align: -webkit-center;
-}
-.left{
-   
-    width: 5%;  
-}
-
-.right{
-    width: 5%;  
-}
-
 .col-sm-3{
     padding: 5px;
 }

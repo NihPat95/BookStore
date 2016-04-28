@@ -2,16 +2,6 @@
     margin: 40px;
     text-align: -webkit-center;
 }
-.left{
-    background-color: #F5F5F5;
-    width: 5%;  
-}
-
-.right{
-    background-color: #F5F5F5;
-    width: 5%;  
-}
-
 .col-sm-3{
     padding: 5px;
 }
