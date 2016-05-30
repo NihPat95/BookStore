@@ -4,7 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
    <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache"/>
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>MindPalace</title>
    <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -82,7 +83,7 @@
                <form action="<%request.getContextPath();%>NewRegister" method="post">
                <input type="text" name="name" id="name" placeholder="Enter Name Here">
                <br/>
-               <input type="text" name="email" id="email" placeholder="Enter Email Here">
+               <input type="email" name="email" id="email" placeholder="Enter Email Here">
                <br/>
                <input type="text" name="number" id="number" placeholder="Enter Number Here">
                <br/>
@@ -99,7 +100,7 @@
          <div class="col-sm-6">
             <h1>Existing User</h1>
             <form action="<%request.getContextPath();%>Login" method="post">
-               <input type="text" name="email" id="email" placeholder="Enter Email Here">
+               <input type="email" name="email" id="email" placeholder="Enter Email Here">
                <br/>
                <input type="password" name="password" id="password" placeholder="Enter Password Here">
                <br/>
